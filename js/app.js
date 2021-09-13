@@ -17,8 +17,8 @@ const showProducts = (products) => {
       </div>
       <h3>${product.title.slice(0, 40)}</h3>
       <p><strong>Category:</strong> <i>${product.category}</i></p>
-      <p><strong>Rate:</strong> ${product.rating.rate} <strong>Count:</strong> ${product.rating.count}</p>
-      <h2>Price: $ ${product.price}</h2>
+      <p><strong> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i><i class="fas fa-star"></i> <i class="far fa-star"></i> </strong> ${product.rating.rate} <br> <strong>Customer Review:</strong> ${product.rating.count}</p>
+      <h2>Price:<b> $${product.price}</b></h2>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-secondary btn-outline-dark">add to cart</button>
       <button id="details-btn" class="btn btn-dark">Details</button></div>
       `;
@@ -36,7 +36,7 @@ const addToCart = (id, price) => {
 
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
-  const converted = parseInt(element);
+  const converted = parseFloat(element);
   return converted;
 };
 
@@ -45,12 +45,12 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  document.getElementById(id).innerText = (total.toFixed(2));
+  document.getElementById(id).innerText = total.toFixed(2);
 };
 
 // set innerText function
 const setInnerText = (id, value) => {
-  document.getElementById(id).innerText = Math.round(value);
+  document.getElementById(id).innerText = value.toFixed(2);
 };
 
 // update delivery charge and total Tax
@@ -74,7 +74,7 @@ const updateTaxAndCharge = () => {
 const updateTotal = () => {
   const grandTotal = 
     getInputValue("price") + getInputValue("delivery-charge") + getInputValue("total-tax");
-    document.getElementById("total").innerText = (grandTotal.toFixed(2));  
+    document.getElementById("total").innerText = grandTotal.toFixed(2);  
 };
 // updateTotal();
 

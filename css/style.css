@@ -79,7 +79,9 @@ main{
 .cart-main {
   padding-right: 30px;
 }
-
+i, b{
+  color: #ba9066;
+}
 div h1{
   color: #ba9066;
 }
