@@ -8,13 +8,14 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
+    console.log(product);
     const image = product.image;
     const div = document.createElement("div");
     div.innerHTML = `<div class="single-product cardbg">
       <div>
         <img class="product-image" src=${image}></img>
       </div>
-      <h3>${product.title}</h3>
+      <h3>${product.title.slice(0, 40)}</h3>
       <p><strong>Category:</strong> <i>${product.category}</i></p>
       <p><strong>Rate:</strong> ${product.rating.rate} <strong>Count:</strong> ${product.rating.count}</p>
       <h2>Price: $ ${product.price}</h2>
