@@ -15,7 +15,7 @@ const showProducts = (products) => {
       <div>
         <img class="product-image" src=${image}></img>
       </div>
-      <h3>${product.title.slice(0, 40)}</h3>
+      <h3>${product.title.slice(0, 35)}</h3>
       <p><strong>Category:</strong> <i>${product.category}</i></p>
       <p><strong> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i><i class="fas fa-star"></i> <i class="far fa-star"></i> </strong> ${product.rating.rate} <br> <strong>Customer Review:</strong> ${product.rating.count}</p>
       <h2>Price:<b> $${product.price}</b></h2>
